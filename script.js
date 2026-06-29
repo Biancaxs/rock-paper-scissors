@@ -5,7 +5,11 @@ function getComputerChoice(max){
 console.log(getComputerChoice(3))
 
 function getHumanChoice(){
-    return window.prompt("Choose a number: 1 - Rock, 2 - Paper or 3 - Scissors")
+    return window.prompt("Rock, Paper or Scissors?")
 }
 
 console.log(getHumanChoice())
+
+let humanScore = 0
+let computerScore = 0
+
