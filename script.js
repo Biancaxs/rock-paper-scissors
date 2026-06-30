@@ -7,42 +7,63 @@ function getHumanChoice(){
     return userInput.toLowerCase()
 }
 
-
 let humanScore = 0
-let computerScore = 0
+let computerScore = 0 
 
+function playGame(){
+    
+    // ComputerChoice: 1 = Rock, 2 = Paper, 3 = Scissors
 
-// ComputerChoice: 1 = Rock, 2 = Paper, 3 = Scissors
-
-function playRound(humanChoice, computerChoice) {
+    function playRound(humanChoice, computerChoice) {
 
         if (computerChoice === 1 && humanChoice === "paper"){
             console.log("You won! Paper beats Rock.")
-            humanScore += 1
+            humanScore++
+            
         } else if (computerChoice === 1 && humanChoice === "scissors") {
             console.log("You lose! Rock beats Scissors.")
-            computerScore += 1
+            computerScore++
         } else if (computerChoice === 2 && humanChoice === "rock") {
             console.log("You lose! Paper beats Rock.")
-            computerScore += 1
+            computerScore++
         } else if (computerChoice === 2 && humanChoice === "scissors") {
             console.log("You won! Scissors beats Paper.")
-            humanScore += 1
+            humanScore++
         } else if (computerChoice === 3 && humanChoice === "rock"){
             console.log("You won! Rock beats Scissors.")
-            humanScore += 1
+            humanScore++
         } else if (computerChoice === 3 && humanChoice === "paper") {
             console.log("You lose! Paper beats Scissors.")
-            computerScore += 1
+            computerScore++
         } else {
             console.log("Draw!")
         }
-           
     } 
 
+    
 
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice(3);
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice(3);
+    playRound(humanSelection, computerSelection);
 
-playRound(humanSelection, computerSelection);
+}
+
+function winner() {
+        if (humanScore > computerScore){
+            console.log(`Congratulations! \nYour score: ${humanScore} \nComputer score: ${computerScore}`)
+        } else if (computerScore > humanScore){
+            console.log(`Try again! \nYour score: ${humanScore} \nComputer score: ${computerScore}`)
+        } else {
+            console.log(`Draw! \nYour score: ${humanScore} \nComputer score: ${computerScore}`)
+        }
+    }
+
+for (let rounds = 0; rounds < 5; rounds ++){
+    playGame()
+
+    if (rounds === 4){
+        winner()
+    }
+    
+}
