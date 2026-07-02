@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -16,22 +18,21 @@
 
         <div id="result">
             
-            <div class="score">
-                <div class="player">
-                    <p>You</p>
-                    <p class="player-score">0</p>
+            <div class="display-score">
+                <div class="score">
+                    <div class="player">
+                        <p>You</p>
+                        <p class="player-score">0</p>
+                    </div>
+                    <div class="computer">
+                        <p>Computer</p>
+                        <p class="computer-score">0</p>
+                    </div>
                 </div>
-                <div class="computer">
-                    <p>Computer</p>
-                    <p class="computer-score">0</p>
+                <div class="round-result">
+                    <p>Result...</p>
                 </div>
             </div>
-
-            <div class="round-result">
-                <p>Result...</p>
-            </div>
-
-            <div class="winner"></div>
 
         </div>
 
@@ -39,9 +40,13 @@
 
     <div id="container">
 
-        <button class="btn" value="rock" >Rock</button>
-        <button class="btn" value="paper">Paper</button>
-        <button class="btn" value="scissors">Scissors</button>
+        <div class="winner"></div>
+
+        <div class="buttons">
+            <button class="btn" value="rock" >Rock</button>
+            <button class="btn" value="paper">Paper</button>
+            <button class="btn" value="scissors">Scissors</button>
+        </div>
 
     </div>
     
