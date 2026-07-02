@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-color: #ccc5b9;
+    color: #252422;
+
+    height: 100vh;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-evenly;  
+
+    padding: 10px;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+#content h1{
+    font-size: 40px;
+}
+
+#content h3{
+    font-size: 20px;
+}
+
+#content .round {
+    font-size: 18px;
+    color: #eb5e28;
+}
+
+
+#result{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.display-score{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 30px;
+
+    margin: 100px;
+
+}
+
+.score{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 30px;
+
+    border: 1px solid #252422;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.player, .computer{
+    font-size: 18px;
+    color: #403d39;
+}
+
+.player-score, .computer-score{
+    border: 1px solid #252422;
+    border-radius: 5px;
+    padding: 10px 50px;
+
+    font-size: 50px;
+    color: #eb5e28;
+}
+
+.round-result{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+#container{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+}
+
+.btn{
+    border-style: none;
+
+    background-color: #252422;
+    color: #ccc5b9;
+
+    width: 100px;
+    height: 30px;
+
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background-color: #eb5e28;
+    color: #252422;
+}
