@@ -2,36 +2,117 @@ function getComputerChoice(max){
     return Math.floor(Math.random() * max);
 }
 
+let roundText = "Round: "
+let round = 1
+
 let humanScore = 0
 let computerScore = 0 
 
 function playGame(){
+
+    const roundResult = document.querySelector(".round-result")
+    const playerScr = document.querySelector(".player-score")
+    const computerScr = document.querySelector(".computer-score")
+    const winner = document.querySelector(".winner")
+    const rnd = document.querySelector(".round")
+
 
     // ComputerChoice: 1 = Rock, 2 = Paper, 3 = Scissors
 
     function playRound(humanChoice, computerChoice) {
 
         if (computerChoice === 1 && humanChoice === "paper"){
-            console.log("You won! Paper beats Rock.")
+
+            round++
+            rnd.textContent = roundText + round
+
             humanScore++
-            
+            playerScr.textContent = humanScore
+
+            roundResult.textContent = "You win!"
+
         } else if (computerChoice === 1 && humanChoice === "scissors") {
-            console.log("You lose! Rock beats Scissors.")
+
+            round++
+            rnd.textContent = roundText + round
+
             computerScore++
+            computerScr.textContent = computerScore
+
+            roundResult.textContent = "You lose!"
+
         } else if (computerChoice === 2 && humanChoice === "rock") {
-            console.log("You lose! Paper beats Rock.")
+
+            round++
+            rnd.textContent = roundText + round
+
             computerScore++
+
+            computerScr.textContent = computerScore
+            roundResult.textContent = "You lose!"
+
         } else if (computerChoice === 2 && humanChoice === "scissors") {
-            console.log("You won! Scissors beats Paper.")
+
+            round++
+            rnd.textContent = roundText + round
+
             humanScore++
+            playerScr.textContent = humanScore
+
+            roundResult.textContent = "You win!"
+
         } else if (computerChoice === 3 && humanChoice === "rock"){
-            console.log("You won! Rock beats Scissors.")
+
+            round++
+            rnd.textContent = roundText + round
+
             humanScore++
+            playerScr.textContent = humanScore
+
+            roundResult.textContent = "You win!"
+
         } else if (computerChoice === 3 && humanChoice === "paper") {
-            console.log("You lose! Paper beats Scissors.")
+
+            round++
+            rnd.textContent = roundText + round
+
             computerScore++
+            computerScr.textContent = computerScore
+
+            roundResult.textContent = "You lose!"
+
         } else {
-            console.log("Draw!")
+
+            round++
+            rnd.textContent = roundText + round
+
+            roundResult.textContent = "Tie!"
+
+        }
+
+
+
+        if (humanScore ===  5){
+            winner.textContent = "Result of the last match: You won!"
+
+            humanScore = 0
+            computerScore = 0
+            round = 1
+
+            playerScr.textContent = humanScore
+            computerScr.textContent = computerScore
+            rnd.textContent = roundText + round
+
+        } else if (computerScore === 5){
+            winner.textContent = "Result of the last match: You lose..."
+            
+            humanScore = 0
+            computerScore = 0
+            round = 1
+            
+            playerScr.textContent = humanScore
+            computerScr.textContent = computerScore
+            rnd.textContent = roundText + round
         }
     } 
 
@@ -50,23 +131,7 @@ function playGame(){
 
 }
 
-function winner() {
-        if (humanScore > computerScore){
-            console.log(`Congratulations! \nYour score: ${humanScore} \nComputer score: ${computerScore}`)
-        } else if (computerScore > humanScore){
-            console.log(`Try again! \nYour score: ${humanScore} \nComputer score: ${computerScore}`)
-        } else {
-            console.log(`Draw! \nYour score: ${humanScore} \nComputer score: ${computerScore}`)
-        }
-    }
 
-// for (let rounds = 0; rounds < 5; rounds ++){
-//     playGame()
 
-//     if (rounds === 4){
-//         winner()
-//     }
-    
-// }
 
 playGame()
