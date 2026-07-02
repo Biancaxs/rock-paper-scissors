@@ -2,16 +2,11 @@ function getComputerChoice(max){
     return Math.floor(Math.random() * max);
 }
 
-function getHumanChoice(){
-    const userInput = window.prompt("Rock, Paper or Scissors?")
-    return userInput.toLowerCase()
-}
-
 let humanScore = 0
 let computerScore = 0 
 
 function playGame(){
-    
+
     // ComputerChoice: 1 = Rock, 2 = Paper, 3 = Scissors
 
     function playRound(humanChoice, computerChoice) {
@@ -41,11 +36,17 @@ function playGame(){
     } 
 
     
+    const buttons = document.querySelectorAll(".btn");
+    buttons.forEach(button => {
+            button.addEventListener("click", function(e){
+            let userChoice = (e.target.value)
 
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice(3);
+            const humanSelection = userChoice;
+            const computerSelection = getComputerChoice(3);
 
-    playRound(humanSelection, computerSelection);
+            playRound(humanSelection, computerSelection) 
+        })
+    })
 
 }
 
@@ -59,11 +60,13 @@ function winner() {
         }
     }
 
-for (let rounds = 0; rounds < 5; rounds ++){
-    playGame()
+// for (let rounds = 0; rounds < 5; rounds ++){
+//     playGame()
 
-    if (rounds === 4){
-        winner()
-    }
+//     if (rounds === 4){
+//         winner()
+//     }
     
-}
+// }
+
+playGame()
