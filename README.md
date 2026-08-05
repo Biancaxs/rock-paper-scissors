@@ -32,7 +32,7 @@ This project was built as part of The Odin Project curriculum to practice JavaSc
 
 ## Live Demo
 
-[https://rock-paper-scissors-sigma-sage.vercel.app](#)
+https://rock-paper-scissors-sigma-sage.vercel.app
 
 ## Credits
 
